@@ -1,9 +1,9 @@
-import { Player } from './Player.model';
+import {Player} from './Player.model';
 
 export class Players {
   playersList: Player[];
   constructor() {
-    this.playersList = new Array();
+    this.playersList = [];
   }
 
   addPlayer(player: Player): void {
@@ -22,8 +22,8 @@ export class Players {
 
   getTopThree(): Player[] {
     // création d'une copie
-    const tempPlayers: Player[] = []
-    this.playersList.forEach(element=> tempPlayers.push(element))
+    const tempPlayers: Player[] = [];
+    this.playersList.forEach((element) => tempPlayers.push(element));
     // On trie par ordre decroissant sur le score des joueurs
     tempPlayers.sort((joueur1, joueur2) => joueur2.score - joueur1.score);
     // On coupe les 3 premiers scores (les plus haut) et on les retourne.
